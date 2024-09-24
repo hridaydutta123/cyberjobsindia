@@ -1,0 +1,50 @@
+title: Cyber jobs in India
+description: Navigating the cyber jobs industry in India
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+exclude:
+  - .editorconfig
+  - .gitignore
+  - CNAME
+  - Gemfile*
+  - Rakefile
+  - README.md
+  - vendor
+  - .jekyll-cache
+
+collections:
+  couches:
+    output: true
+  # The json collection is a symlink
+  # to the _couches collection
+  json:
+    output: true
+api:
+  fields:
+    - city
+    - country
+    - region
+    - email
+    - github
+    - couchsurfing
+    - relative_path
+    - url
+    - content
+emptyHash: {}
+defaults:
+  - scope:
+      type: couches
+    values:
+      layout: couch
+  - scope:
+      type: json
+    values:
+      layout: json
+      permalink: /couches/:path.json
+# Ignore warnings
+# https://github.com/jekyll/minima/issues/709
+sass:
+  quiet_deps: true

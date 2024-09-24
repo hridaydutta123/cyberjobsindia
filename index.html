@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading"><b>Cyber jobs in India</b></h1>
+
+  <table class="post-list">
+    <thead>
+        <th>Title</th>
+        <th>Company</th>
+        <th>Location</th>
+        <th>Date posted</th>
+        <th colspan=2>Info</th>
+    </thead>
+    <tbody>
+    {% for couch in site.couches %}
+    <tr>
+        <td>
+            {% assign name = couch.title %}
+            <a href="{{couch.url}}">
+            {{ name }}
+            </a>
+        </td>
+        <td>
+            {% assign company = couch.company %}
+            {{ company }}
+        </td>
+        {% assign country = couch.location | upcase %}
+        <td>{{couch.location}}, {{site.data.countries[location] | downcase | capitalize}}</td>
+        <td>{{couch.posted_date}}</td>
+        <td colspan=2>
+            {{ couch.content | strip_html | truncatewords: 30}}
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

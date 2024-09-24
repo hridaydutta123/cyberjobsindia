@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<div class="post">
+
+    {% assign name = page.title %}
+    {% unless name %}
+        {% assign name = page.relative_path|remove:"_couches/"|remove_first:".md" %}
+    {% endunless %}
+
+    <header class="post-header">
+        <h1 class="post-title">{{ name }}</h1>
+    </header>
+
+    <article class="post-content">
+        <div>
+            <strong>Company:</strong>
+            <span>
+                {% assign company = page.company %}
+                {{company}}
+            </span>
+        </div>
+        <div>
+            <strong>Location:</strong>
+            <span>
+                {% assign location = page.location %}
+                <a href="https://nominatim.openstreetmap.org/ui/search.html?q={{location|strip_html|strip|cgi_escape}}">{{ location }}</a>
+            </span>
+        </div>
+        <div>
+            {% assign linkedin_url = page.linkedin_url %}
+            <strong><a href="{{linkedin_url}}">LinkedIn post</a></strong>
+        </div>
+    <hr>
+
+    {{ content }}
+
+    </article>
+</div>

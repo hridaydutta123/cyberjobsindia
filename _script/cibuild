@@ -1,0 +1,21 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Make sure all _couches have sane filenames.
+badcouches=$(find ./_couches -type f -not -name \*.md)
+if [ ! -z ${badcouches} ]; then
+	for c in "${badcouches}"; do
+		echo "$c: couch should be named foo.md"
+	done
+	false
+fi
+
+# Create the json collection
+cp -r _couches/ _json
+
+# Run jekyll
+bundle exec jekyll doctor
+bundle exec jekyll build
+# This is not getting copied for some reason
+cp geo.json _site/
