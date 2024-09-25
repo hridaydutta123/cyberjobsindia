@@ -48,6 +48,5 @@ defaults:
 # https://github.com/jekyll/minima/issues/709
 sass:
   quiet_deps: true
-domain: hridaydutta123.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
-url: https://hridaydutta123.github.io  # the base hostname and protocol for your site, e.g. http://example.com
-baseurl: '/cyberjobsindia/'     # place folder name if the site is served in a subfolder
+domain: hridaydutta123.github.io      # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: https://hridaydutta123.github.io # the base hostname and protocol for your site, e.g. http://example.com
