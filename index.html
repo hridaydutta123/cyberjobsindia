@@ -19,7 +19,7 @@ layout: default
     <tr>
         <td>
             {% assign name = couch.title %}
-            <a href="{{couch.url | prepend: site.url}}">
+            <a href="{{ site.url }}{{couch.url}}">
             {{ name }}
             </a>
         </td>
