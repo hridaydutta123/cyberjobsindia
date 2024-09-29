@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO)
 # Fired once for each successfully processed job
 def on_data(data: EventData):
     print("Writing " + str(data.job_id))
-    with open(data.job_id + '.pickle', 'wb') as handle:
+    with open('jobs/' + data.job_id + '.pickle', 'wb') as handle:
         pickle.dump(data, handle)
 
 def on_error(error):
@@ -30,7 +30,7 @@ scraper = LinkedinScraper(
     headless=False,  # Overrides headless mode only if chrome_options is None
     max_workers=1,  # How many threads will be spawned to run queries concurrently (one Chrome driver for each thread)
     slow_mo=15,  # Slow down the scraper to avoid 'Too many requests 429' errors (in seconds)
-    page_load_timeout=80  # Page load timeout (in seconds)    
+    page_load_timeout=30  # Page load timeout (in seconds)    
 )
 
 # Add event listeners
@@ -40,7 +40,7 @@ scraper.on(Events.END, on_end)
 
 queries = [
     Query(
-        query='threat intelligence', # place keywords here - cyber, cybercrime, cybersecurity, threat intelligence
+        query='infomation+security', # place keywords here - infomation+security, cyber, cybercrime, cyber security, threat intelligence
         options=QueryOptions(
             locations=['India'],
             limit=1000
