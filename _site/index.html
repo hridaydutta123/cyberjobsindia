@@ -43,6 +43,15 @@
         <div class="home">
 
   <h1 class="page-heading"><b>Cyber jobs in India</b></h1>
+  Common Tags: 
+  <button id="senior">Senior</button>
+  <button id="analyst">Analyst</button>
+  <button id="threat">Threat</button>
+  <button id="manager">Manager</button>
+  <button id="engineer">Engineer</button>
+  <button id="incident">Incident</button>
+  <button id="lead">Lead</button>
+
   <table id="myTable" class="display">
     <thead>
         <th>Title</th>
@@ -2759,22 +2768,6 @@
     <tr>
         <td>
             
-            <a href="/cyberjobsindia/couches/4032562736.html">
-            Cyber Butlers
-            </a>
-        </td>
-        <td>
-            
-            Reliance Industries Limited
-        </td>
-        
-        <td>Mumbai, Maharashtra, India, </td>
-        <td>2024-09-24</td>
-    </tr>
-    
-    <tr>
-        <td>
-            
             <a href="/cyberjobsindia/couches/4032563003.html">
             Information Security Analyst
             </a>
@@ -3388,6 +3381,39 @@ Last modified: <h4 id="last-modified"></h4>
 <script>
 let text = document.lastModified;
 document.getElementById("last-modified").innerHTML = text;
+
+$(document).ready( function () {
+  var table = $('#myTable').DataTable();
+  
+  $('#senior').on('click', function() {
+    table.search('senior').draw();
+   })
+
+    $('#analyst').on('click', function() {
+    table.search('analyst').draw();
+   })
+
+  $('#threat').on('click', function() {
+    table.search('threat').draw();
+   })
+  $('#manager').on('click', function() {
+    table.search('manager').draw();
+   })
+
+  $('#engineer').on('click', function() {
+    table.search('engineer').draw();
+   })
+
+  $('#incident').on('click', function() {
+    table.search('incident').draw();
+   })
+  $('#lead').on('click', function() {
+    table.search('lead').draw();
+   })
+
+  } );
+
+
 </script>
       </div>
     </div>
