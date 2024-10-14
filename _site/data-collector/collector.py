@@ -40,7 +40,7 @@ scraper.on(Events.END, on_end)
 
 queries = [
     Query(
-        query='infomation+security', # place keywords here - infomation+security, cyber, cybercrime, cyber security, threat intelligence
+        query='threat+intelligence', # place keywords here - infomation+security, cyber, cybercrime, cyber security, threat intelligence
         options=QueryOptions(
             locations=['India'],
             limit=1000
